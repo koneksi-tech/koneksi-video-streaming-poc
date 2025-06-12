@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koneksi Video Streaming - Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .demo-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 8px;
+        }
+        .screenshot {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .api-endpoint {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Koneksi Video Streaming Demo</h1>
+    
+    <div class="demo-section">
+        <h2>🎥 Overview</h2>
+        <p>This is a simple video streaming web application that uses Koneksi Storage as the backend for storing and streaming video files. The app provides a clean, modern interface for uploading, viewing, and managing video content.</p>
+    </div>
+
+    <div class="demo-section">
+        <h2>✨ Key Features</h2>
+        <div class="feature-list">
+            <div class="feature-card">
+                <h3>📤 Easy Upload</h3>
+                <p>Drag and drop or click to select video files. Supports MP4, WebM, MOV, AVI, and MKV formats.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎬 Instant Streaming</h3>
+                <p>Videos are streamed directly from Koneksi Storage with adaptive quality based on connection speed.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📱 Responsive Design</h3>
+                <p>Works seamlessly on desktop, tablet, and mobile devices with an adaptive grid layout.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🗑️ Video Management</h3>
+                <p>Delete videos with a single click. Confirmation dialog prevents accidental deletions.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🚀 Quick Start</h2>
+        <ol>
+            <li>Update <code>app.js</code> with your Koneksi API credentials</li>
+            <li>Run <code>npm start</code> or use any static web server</li>
+            <li>Open <code>http://localhost:8000</code> in your browser</li>
+            <li>Start uploading and streaming videos!</li>
+        </ol>
+    </div>
+
+    <div class="demo-section">
+        <h2>🔌 API Integration</h2>
+        <p>The app integrates with Koneksi Storage API using these endpoints:</p>
+        
+        <div class="api-endpoint">
+            <strong>List Videos:</strong><br>
+            <code>GET /api/clients/v1/directories/{directory_id}</code>
+        </div>
+        
+        <div class="api-endpoint">
+            <strong>Upload Video:</strong><br>
+            <code>POST /api/clients/v1/files?directory_id={directory_id}</code>
+        </div>
+        
+        <div class="api-endpoint">
+            <strong>Stream Video:</strong><br>
+            <code>GET /api/clients/v1/files/{file_id}/download</code>
+        </div>
+        
+        <div class="api-endpoint">
+            <strong>Delete Video:</strong><br>
+            <code>DELETE /api/clients/v1/files/{file_id}</code>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>🛠️ Technical Stack</h2>
+        <ul>
+            <li><strong>Frontend:</strong> Vanilla JavaScript, HTML5, CSS3</li>
+            <li><strong>Video Player:</strong> HTML5 native video element with custom controls</li>
+            <li><strong>Storage:</strong> Koneksi Storage API</li>
+            <li><strong>No Dependencies:</strong> Pure JavaScript, no frameworks required</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>⚡ Performance Features</h2>
+        <ul>
+            <li>Lazy loading of video thumbnails</li>
+            <li>Progressive video streaming</li>
+            <li>Optimized for mobile data usage</li>
+            <li>Client-side video format validation</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>🔒 Security Notes</h2>
+        <p><strong>⚠️ Important:</strong> This demo includes API credentials in client-side code. For production:</p>
+        <ul>
+            <li>Implement a backend proxy for API authentication</li>
+            <li>Use environment variables for credentials</li>
+            <li>Add user authentication</li>
+            <li>Configure CORS properly</li>
+            <li>Use HTTPS for all communications</li>
+        </ul>
+    </div>
+
+    <div class="demo-section">
+        <h2>📝 License</h2>
+        <p>This project is open source and available under the MIT License.</p>
+    </div>
+</body>
+</html>
